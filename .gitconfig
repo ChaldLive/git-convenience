@@ -1,0 +1,42 @@
+[user]
+	name = Carsten Hald
+	email = chald.live@gmail.com
+[core]
+	autocrlf = false
+	ignorecase = true
+	excludesfile = '~/.gitignore'
+	longpaths = true
+	editor = nvim 
+
+[pull]
+  rebase = true
+  # This ensure git will only rebase when it can fast forward, securing for no surprise merges.
+  ff = only 
+	[filesystem "Oracle Corporation|1.8.0_212-1-ojdkbuild|1252428564"]
+		timestampResolution = 2001 microseconds
+		minRacyThreshold = 0 nanoseconds
+[alias]
+		hist = log --all --graph --decorate --oneline
+		gc = git checkout
+		st = status
+		br = branch
+		co = checkout
+		sl = stash list
+		sll = stash-list
+		slll = stash-list --full
+		ss = stash save
+		sa = !sh -c 'git stash apply stash@{$1}' -
+		sd = !sh -c 'git stash drop stash@{$1}' -
+		gsnh = !sh -c 'git show --name-only HEAD@{$1}' -
+  gt = !sh -c 'git cat-file tag $1'
+  gtl =  log -1 --pretty=%B
+[merge]
+	tool = bc
+[mergetool "bc"]
+	path = /Applications/Beyond Compare.app/Contents/MacOS/bcomp
+[mergetool]
+	prompt = false
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[init]
+	defaultBranch = main
